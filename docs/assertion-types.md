@@ -3,12 +3,12 @@
 Pester 6 preview comes with a new set of Should-* assertions. These new assertions are split these categories based on their usage:
 
 - value
-    - generic
-    - type specific
+  - generic
+  - type specific
 
 - collection
-    - generic
-    - combinator
+  - generic
+  - combinator
 
 Each of these categories treats `$Actual` and `$Expected` values differently, to provide a consistent behavior when using the `|` syntax.
 
@@ -88,6 +88,7 @@ Get-Process -Name Idle | Should-Be -Expected "System.Diagnostics.Process (Idle)"
 ```
 
 The assertions in the above examples will both pass:
+
 - `1` converts to `bool` `$true`, which is the expected value.
 - `Get-Process` retrieves the Idle process (on Windows). This process object gets converted to `string`. The string is equal to the expected value.
 
@@ -101,6 +102,4 @@ The `$Expected` accepts input that has the same type as the assertion type. E.g.
 
 ## Collection assertions
 
-
-
-These assertions are exported from the module as Assert-* functions and aliased to Should-*, this is because of PowerShell restricting multi word functions to a list of predefined approved verbs.
+These assertions are exported from the module as Assert-*functions and aliased to Should-*, this is because of PowerShell restricting multi word functions to a list of predefined approved verbs.
